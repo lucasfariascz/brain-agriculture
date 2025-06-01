@@ -1,0 +1,165 @@
+
+### Rural Producer Operations
+
+#### Create Rural Producer
+POST http://localhost:3000/create-rural-producer
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "cpfOrCnpj": "021.880.832-10"
+}
+
+#### Update Rural Producer
+PUT http://localhost:3000/update-rural-producer/288d9ce7-de36-416c-8139-40c4da3c77be
+Content-Type: application/json
+
+{
+  "name": "Lucas Faraias",
+  "cpfOrCnpj": "799.231.180-96"
+}
+
+#### Get Rural Producers
+GET http://localhost:3000/get-rural-producers
+Content-Type: application/json
+
+
+#### Get Rural Producer With Property By Id
+GET http://localhost:3000/get-rural-producer-with-property-by-id/288d9ce7-de36-416c-8139-40c4da3c77be/property
+Content-Type: application/json
+
+#### Get Rural Producer By Id
+GET http://localhost:3000/get-rural-producer-by-id/288d9ce7-de36-416c-8139-40c4da3c77be
+Content-Type: application/json
+
+
+#### Delete Rural Producer
+DELETE http://localhost:3000/delete-rural-producer/076a5ee8-6db7-40c1-a1a8-d56815b0d51e
+Content-Type: application/json
+
+
+### Property Operations
+
+#### Create Property
+POST http://localhost:3000/create-property
+Content-Type: application/json
+
+{
+  "farmName": "Fazenda 2",
+  "farmCity": "São Paulo",
+  "farmState": "SP",
+  "totalAreaHectares": 100,
+  "arableAreaHectares": 50,
+  "vegetationAreaHectares": 50,
+  "ruralProducerId": "288d9ce7-de36-416c-8139-40c4da3c77be"
+}
+
+#### Get Properties
+GET http://localhost:3000/get-properties
+Content-Type: application/json
+
+#### Update Property
+PUT http://localhost:3000/update-property/8b352eff-9d80-41a8-b6fa-a01e1667ecd1
+Content-Type: application/json
+
+{
+  "farmName": "Fazenda 2",
+  "farmCity": "Rio de Janeiro",
+  "farmState": "RJ",
+  "totalAreaHectares": 200,
+  "arableAreaHectares": 100,
+  "vegetationAreaHectares": 100
+}
+
+#### Delete Property
+DELETE http://localhost:3000/delete-property/9b98c5b1-9bf4-47b9-aadb-409d053279f0
+Content-Type: application/json
+
+#### Get Property By Id
+GET http://localhost:3000/get-property-by-id/8b352eff-9d80-41a8-b6fa-a01e1667ecd1
+Content-Type: application/json
+
+#### Get Property With Plant Crop By Id
+GET http://localhost:3000/get-property-with-plant-crop-by-id/8b352eff-9d80-41a8-b6fa-a01e1667ecd1/plant-crop
+Content-Type: application/json
+
+#### Add Plant Crops To Property
+POST http://localhost:3000/add-plant-crops-to-property/8b352eff-9d80-41a8-b6fa-a01e1667ecd1/plant-crops
+Content-Type: application/json
+
+{
+  "plantCrops": [
+    {
+      "name": "Milho",
+      "harvestId": "6b22eea6-973d-48e7-b18e-3ebe63d72863"
+    }
+  ]
+}
+
+### Harvest Operations
+
+#### Create Harvest
+POST http://localhost:3000/create-harvest
+Content-Type: application/json
+
+{
+  "year": 2021
+}
+
+#### Update Harvest
+PUT http://localhost:3000/update-harvest/ef22dcf1-a329-40e1-9945-1bc3b1f75e3a
+Content-Type: application/json
+
+{
+  "year": "2020"
+}
+
+#### Delete Harvest
+DELETE http://localhost:3000/delete-harvest/ef22dcf1-a329-40e1-9945-1bc3b1f75e3a
+Content-Type: application/json
+
+#### Get Harvests
+GET http://localhost:3000/get-harvests
+Content-Type: application/json
+
+
+### Get Harvest By Id
+GET http://localhost:3000/get-harvest-by-id/42dc1338-90e6-4813-80d3-dd0cdae46b4e
+Content-Type: application/json
+
+
+### Plant Crop Operations
+
+#### Create Plant Crop
+POST http://localhost:3000/create-plant-crop
+Content-Type: application/json
+
+{
+  "name": "Milho",
+  "propertyId": "8b352eff-9d80-41a8-b6fa-a01e1667ecd1",
+  "harvestId": "42dc1338-90e6-4813-80d3-dd0cdae46b4e"
+}
+
+#### Update Plant Crop
+PUT http://localhost:3000/update-plant-crop/90b3223d-8621-4c33-b6ae-859ba272174a
+Content-Type: application/json
+
+{
+  "name": "Arroz",
+  "propertyId": "8b352eff-9d80-41a8-b6fa-a01e1667ecd1",
+  "harvestId": "42dc1338-90e6-4813-80d3-dd0cdae46b4e"
+}
+
+#### Delete Plant Crop
+DELETE http://localhost:3000/delete-plant-crop/90b3223d-8621-4c33-b6ae-859ba272174a
+Content-Type: application/json
+
+#### Get Plant Crops
+GET http://localhost:3000/get-plant-crops/
+Content-Type: application/json
+
+
+#### Get Plant Crop By Id
+GET http://localhost:3000/get-plant-crop-by-id/90b3223d-8621-4c33-b6ae-859ba272174a
+Content-Type: application/json
+

@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: brain-agriculture-test
+      POSTGRES_PASSWORD: brain12345678test
+      POSTGRES_DB: database-brain-agriculture-test
+    ports:
+      - "5433:5432"
+    volumes:
+      - test_db_data:/var/lib/postgresql/data
+
+volumes:
+  test_db_data:
+

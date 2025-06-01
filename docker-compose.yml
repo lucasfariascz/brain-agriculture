@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres16prod
+    restart: always
+    environment:
+      POSTGRES_USER: brain_agriculture_prod
+      POSTGRES_PASSWORD: brain_agriculture_prod
+      POSTGRES_DB: database_brain_agriculture_prod
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data
+
+volumes:
+  postgres_data_prod:
