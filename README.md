@@ -3,6 +3,10 @@
 
 API para gereciamento de produtores rurais e suas propriedades. 
 
+## Autor
+
+- [@lucasfariascz](https://www.github.com/lucasfariascz)
+
 
 ## Referência
 
@@ -11,8 +15,6 @@ API para gereciamento de produtores rurais e suas propriedades.
  - [Documentação TypeOrm](https://typeorm.io/)
  - [Validador CPF/CNPJ](https://www.npmjs.com/package/cpf-cnpj-validator)
  - [Winston para logs](https://www.npmjs.com/package/winston)
-
-
 
 ## Documentação da API
 
@@ -337,11 +339,12 @@ Para acessar a documentação JSON:
 
 ```
 GET /api-docs-json
+```
 
 
 ## Apêndice
 
-## Apêndice - JSONs para Swagger
+### JSONs para Swagger
 
 > **⚠️ IMPORTANTE:** Antes de testar as APIs no Swagger, execute as seeds do banco de dados para popular com dados iniciais:
 > ```bash
@@ -464,9 +467,6 @@ Para facilitar os testes, aqui estão os IDs criados pelas seeds:
 | **Property 2** | `cdaf799f-7f24-4669-9f49-e61ed7011ec3` | Fazenda do Souza 2 |
 | **Harvest** | `be89a300-80d3-40c0-8a59-8fb6501a9838` | Safra 2025 |
 | **Plant Crop** | `e1437cce-f708-49cd-8b53-1ba301c774d2` | Soja |
-## Autor
-
-- [@lucasfariascz](https://www.github.com/lucasfariascz)
 
 
 ## Variáveis de Ambiente
@@ -522,8 +522,6 @@ $ pnpm run test:e2e
 # test coverage
 $ pnpm run test:cov
 ```
-
-
 
 ### Rodar seed
 
