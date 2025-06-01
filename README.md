@@ -1,4 +1,3 @@
-
 # Brain Agriculture - Teste Técnico v2
 
 API para gereciamento de produtores rurais e suas propriedades. 
@@ -529,3 +528,46 @@ $ pnpm run test:cov
 2. Acesse o Swagger em: `http://localhost:3000/api-docs`
 3. Copie e cole os JSONs acima nos endpoints correspondentes
 4. Use os IDs da tabela para testar operações que requerem relacionamentos entre entidades
+
+### Arquitetura do Sistema
+
+```mermaid
+graph TB
+    Client[Cliente/Frontend] --> Controller[Controllers]
+    Controller --> Service[Services]
+    Service --> Repository[Repositories]
+    Repository --> DB[(Banco de Dados)]
+    
+    Service --> External[Serviços Externos]
+    Controller --> Validation[Validação DTO]
+    Controller --> Swagger[Documentação Swagger]
+```
+
+## Diagrama ER do Banco de Dados
+
+![Diagrama ER do Banco de Dados](diagrama_er_banco_de_dados.png)
+
+### Estrutura de Módulos
+
+```
+src/
+├── features/                    # Módulos de funcionalidades
+│   ├── rural-producer/         # Produtores Rurais
+│   │   ├── controllers/        # Endpoints da API
+│   │   ├── services/          # Lógica de negócio
+│   │   ├── repositories/      # Acesso aos dados
+│   │   ├── dtos/             # Validação de entrada/saída
+│   │   └── entities/         # Modelos do banco
+│   │
+│   ├── property/              # Propriedades Agrícolas
+│   ├── harvest/               # Safras
+│   ├── plat-crop/            # Culturas Plantadas
+│   └── dashboard/            # Relatórios e Estatísticas
+│
+├── shared/                     # Código compartilhado
+│   ├── database/              # Configuração do banco
+│   ├── config/               # Configurações gerais
+│   └── utils/                # Utilitários
+│
+└── main.ts                    # Ponto de entrada da aplicação
+```
