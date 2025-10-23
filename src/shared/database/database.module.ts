@@ -24,6 +24,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         logging: true,
         migrationsRun: false,
         autoLoadEntities: true,
+        ssl: true,
       }),
     }),
   ],
